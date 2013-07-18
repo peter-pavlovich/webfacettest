@@ -1,10 +1,14 @@
+# Gradle related files and directories
 build/**
 .gradle/**
-.idea/**
-*.iml
+
+# Compiled class files
 *.class
 
-# Package Files #
+# Packaged Files #
 *.jar
 *.war
 *.ear
+
+.idea/**
+.xxx/**
