@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
 
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://struts.apache.org/dtds/struts-config_1_2.dtd">
 
 <struts-config>
    <data-sources />
@@ -25,9 +27,15 @@
       </action>
    </action-mappings>
 
-   
+
    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" bufferSize="4096" debug="0" />
-  
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config"
+                      value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+
    <message-resources parameter="de.laliluna.tutorials.library.struts.ApplicationResources" />
 
 </struts-config>
