@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+   <data-sources />
+   <form-beans />
+   <global-exceptions />
+   <global-forwards >
+      <forward
+         name="welcome"
+         path="/welcome.do"
+         redirect="true" />
+   </global-forwards>
+
+   <action-mappings >
+      <action path="/welcome" type="de.laliluna.tutorials.library.struts.action.WelcomeAction">
+         <forward name="showWelcome" path="page.welcome" />
+      </action>
+      <action path="/bookList" type="de.laliluna.tutorials.library.struts.action.BookListAction">
+         <forward name="showBookList" path="page.booklist" />
+      </action>
+      <action path="/navigation" type="de.laliluna.tutorials.library.struts.action.NavigationAction">
+         <forward name="showNavigation" path="/jsp/navigation.jsp" />
+      </action>
+   </action-mappings>
+
+   
+   <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" bufferSize="4096" debug="0" />
+  
+   <message-resources parameter="de.laliluna.tutorials.library.struts.ApplicationResources" />
+
+</struts-config>
+
